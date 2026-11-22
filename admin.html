@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin - Niger State Fire Service</title>
+<style>body{font-family:Arial;background:#f2f2f2;padding:15px} .box{background:white;padding:20px;border-radius:10px;max-width:600px;margin:auto} h1{color:#c00000;text-align:center} input{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px} button{width:100%;padding:14px;background:#c00000;color:white;border:none;border-radius:8px;font-weight:bold} .report{background:#fff5f5;padding:12px;border-radius:8px;margin:10px 0} .hide{display:none}</style>
+</head><body>
+<div class="box">
+<h1>🔥 ADMIN LOGIN</h1>
+<p style="text-align:center">Niger State Fire Service - Minna</p>
+<div id="loginBox">
+<input id="pass" type="password" placeholder="Enter Admin Password">
+<button onclick="login()">LOGIN</button>
+<p style="text-align:center;font-size:13px">First password is: <b>Fire2026</b><br>You can change it later</p>
+</div>
+<div id="adminBox" class="hide">
+<h2>Fire Reports</h2>
+<p>Reports sent from THIS phone will show here. Reports from other phones go to your Email & Netlify.</p>
+<div id="list"></div>
+<button onclick="clearAll()" style="background:#222">CLEAR ALL REPORTS</button>
+<p style="text-align:center"><a href="index.html">← Back to Website</a></p>
+</div>
+</div>
+<script>
+function login(){ if(document.getElementById('pass').value==='Fire2026'){ document.getElementById('loginBox').classList.add('hide'); document.getElementById('adminBox').classList.remove('hide'); show(); } else { alert('Wrong Password Sir'); } }
+function show(){ let r=JSON.parse(localStorage.getItem('fireReports')||'[]'); let h=''; if(r.length==0) h='<p>No report on this phone yet.</p>'; r.forEach(x=>{ h+='<div class="report"><b>'+x.name+'</b> - '+x.phone+'<br>Location: '+x.location+'<br>Type: '+x.type+'<br>'+x.details+'</div>' }); document.getElementById('list').innerHTML=h; }
+function clearAll(){ if(confirm('Clear all?')){ localStorage.removeItem('fireReports'); show(); } }
+</script>
+</body></html>
