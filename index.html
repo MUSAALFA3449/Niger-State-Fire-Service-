@@ -3,144 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Niger State Fire Service | Official Website</title>
+<title>Niger State Fire Service - Minna</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#f4f4f4;color:#222}
-header{background:#b30000;color:#fff;padding:15px;text-align:center;position:sticky;top:0;z-index:100}
-header h1{font-size:22px}
-header p{font-size:13px;opacity:.9}
-nav{background:#111;display:flex;justify-content:center;flex-wrap:wrap}
-nav a{color:#fff;text-decoration:none;padding:12px 15px;font-size:14px;font-weight:bold}
-nav a:hover{background:#b30000}
-.hero{background:#b30000;color:#fff;text-align:center;padding:25px 15px}
-.hero h2{font-size:26px;margin-bottom:8px}
-.hero p{font-size:15px;line-height:1.5}
-.section{max-width:1100px;margin:20px auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.1)}
-.section h2{color:#b30000;border-bottom:3px solid #ffcc00;padding-bottom:8px;margin-bottom:15px;font-size:20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
-.card{border:1px solid #ddd;border-radius:10px;overflow:hidden;text-align:center;background:#fff}
-.card img{width:100%;height:260px;object-fit:cover;display:block;background:#eee}
-.card h3{font-size:15px;padding:10px 5px 2px}
-.card p{font-size:13px;color:#555;padding:0 8px 12px;line-height:1.4}
-.leader img{height:320px}
-.vision-box{background:#fff8e1;border-left:5px solid #ffcc00;padding:15px;margin:10px 0;line-height:1.6}
-.map-img{width:100%;border-radius:10px;border:2px solid #ddd}
-.btn{display:inline-block;background:#ffcc00;color:#111;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:bold;margin-top:10px}
-footer{background:#111;color:#fff;text-align:center;padding:20px;font-size:14px;line-height:1.6}
-.emergency{background:#b30000;color:#fff;text-align:center;padding:15px;font-size:18px;font-weight:bold}
-@media(max-width:600px){.card img{height:240px}.leader img{height:300px}}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:#f5f5f5;color:#222}
+.topbar{background:#111;color:#fff;text-align:center;padding:8px;font-size:13px}
+header{background:#b40000;color:#fff;text-align:center;padding:20px 12px}
+header h1{font-size:26px}
+header p{font-size:14px;line-height:1.5;margin-top:6px}
+nav{background:#fff;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:12px;position:sticky;top:0;z-index:99;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+nav a{text-decoration:none;color:#b40000;background:#f1f1f1;padding:9px 14px;border-radius:20px;font-weight:bold;font-size:14px}
+.hero{background:#b40000;color:#fff;margin:16px;border-radius:16px;padding:28px 18px;text-align:center}
+.hero h2{font-size:18px;line-height:1.5}
+.btn{display:inline-block;margin-top:14px;padding:13px 20px;border-radius:30px;font-weight:bold;text-decoration:none}
+.btn-yellow{background:#ffcc00;color:#000}
+.btn-white{background:#fff;color:#b40000}
+.btn-red{background:#b40000;color:#fff;padding:12px 20px;border-radius:6px;font-weight:bold;text-decoration:none;display:inline-block}
+section,.section{background:#fff;margin:16px;border-radius:14px;padding:18px}
+section h2,.section h2{color:#b40000;margin-bottom:10px;font-size:20px}
+section h3{color:#111;margin:14px 0 8px;font-size:16px}
+section p, section li,.section p,.section li{font-size:15px;line-height:1.6}
+.grid,.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{border:1px solid #eee;border-radius:12px;padding:14px;text-align:center}
+input,textarea,select{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:10px;font-size:15px}
+button,.submit{width:100%;padding:14px;background:#b40000;color:#fff;border:none;border-radius:10px;font-weight:bold;font-size:16px;cursor:pointer}
+.leader{display:flex;gap:12px;align-items:center;background:#fff;padding:14px;border-radius:10px;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.leader .av{width:50px;height:50px;background:#b40000;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.leader b{color:#b40000}
+.station-box{background:#f9f9f9;border-left:4px solid #b40000;padding:12px;border-radius:8px;margin-bottom:12px}
+.timeline{border-left:4px solid #b40000;padding-left:20px;margin:20px 0}
+.timeline div{margin-bottom:20px}
+.timeline strong{color:#b40000}
+.report{background:#fff5f5;padding:12px;border-radius:8px;margin:10px 0}
+.hide{display:none}
+.tips{background:#fff3cd;border-left:5px solid #ffcc00;padding:15px;border-radius:8px;margin-bottom:10px}
+.status{display:none;background:#d4edda;color:#155724;padding:12px;border-radius:8px;margin:10px 0;font-weight:bold;text-align:center}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+label{font-size:13px;font-weight:bold;display:block;margin-top:8px}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px;overflow-x:auto;display:block}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#b40000;color:#fff}
+footer{background:#111;color:#fff;text-align:center;padding:20px;font-size:13px;line-height:1.6}
+footer a{color:#ffcc00;text-decoration:none}
+@media(max-width:500px){.grid,.cards,.row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
-<header>
-<h1>🔥 NIGER STATE FIRE SERVICE</h1>
-<p>Established 1st July 1977| Saving Lives & Properties</p>
-</header>
-
+<div class="topbar">📞 Emergency: 08062420591 | Headquarters, Minna - Niger State</div>
+<header><h1>🔥 NIGER STATE FIRE SERVICE</h1><p>We Save Lives & Property | Office of the Controller - Headquarters, Minna</p><p><b>Controller: Usman F. Usman MFPAN | P.A to the Controller: Musa Alfa FA (II)</b></p><p>Father O'Connell Road, Type "A" Quarters, P.M.B 106, Minna</p></header>
 <nav>
-<a href="#home">Home</a>
-<a href="#about">About Us</a>
-<a href="#leaders">Leadership</a>
-<a href="#past">Past Controllers</a>
-<a href="#gallery">Gallery</a>
-<a href="#stations">Stations</a>
-<a href="#contact">Contact</a>
+<a href="#home">Home</a><a href="#news">📰 News</a><a href="#leadership">👑 Leadership</a><a href="#past">📜 Past Leaders</a><a href="#departments">🏢 Departments</a><a href="#history">📜 History</a><a href="#staff">👥 Staff Logging</a><a href="#report">🚨 Report Fire</a><a href="#stations">📍 Stations</a><a href="#safety">🔥 Safety Tips</a><a href="#contact">📞 Contact</a><a href="#admin">🔐 Admin</a>
 </nav>
+<div class="hero" id="home"><h2>Under the leadership of <b>Controller Usman F. Usman MFPAN</b>, we protect the people of Niger State from fire disasters, 24 hours a day, 7 days a week.</h2><a class="btn btn-yellow" href="#report">🚨 REPORT FIRE NOW</a><br><a class="btn btn-white" href="tel:08062420591">📞 CALL 08062420591</a></div>
 
-<div class="emergency">🚨 FIRE EMERGENCY? CALL: 112 &nbsp; | &nbsp; NIGER STATE FIRE SERVICE HEADQUARTERS, MINNA</div>
+<section id="news"><h2>📰 Latest News</h2><ul><li><b>Fire Safety Campaign:</b> Our officers are visiting schools and markets across Minna.</li><li><b>New Equipment:</b> Niger State Fire Service continues to upgrade response vehicles.</li><li><b>24/7 Response:</b> Control room always open - call 08062420591.</li></ul></section>
 
-<div class="hero" id="home">
-<h2>Welcome to Niger State Fire Service</h2>
-<p>To be the most effective, efficient, reliable and transparent Fire Service in Nigeria.<br>Serving the people of Niger State since 1977.</p>
-<a class="btn" href="#contact">Report Fire / Contact Us</a>
-</div>
-
-<!-- LEADERSHIP -->
-<div class="section" id="leaders">
-<h2>Our Leadership</h2>
-<div class="grid">
-<div class="card leader"><img src="president.jpg" alt="President Tinubu"><h3>HIS EXCELLENCY BOLA AHMED TINUBU, GCFR</h3><p>President, Commander-in-Chief of the Armed Forces<br>Federal Republic of Nigeria</p></div>
-<div class="card leader"><img src="governor.jpg" alt="Governor Bago"><h3>HIS EXCELLENCY MOHAMMED UMARU BAGO</h3><p>Executive Governor<br>Niger State</p></div>
-<div class="card leader"><img src="controller.jpg" alt="Controller Usman"><h3>USMAN FATI USMAN BLD, MFPAN</h3><p>CONTROLLER<br>Niger State Fire Service</p></div>
-<div class="card leader"><img src="coat.jpg" alt="Coat of Arms"><h3>FEDERAL REPUBLIC OF NIGERIA</h3><p>Unity & Faith, Peace & Progress</p></div>
-</div>
+<div id="leadership" class="section">
+<div class="card" style="text-align:center;line-height:1.9;margin-bottom:15px"><div style="font-size:50px">👨‍🚒</div><h2 style="font-size:22px">Controller</h2><p style="font-size:20px;font-weight:bold">Usman F. Usman, MFPAN</p><p>Controller, Niger State Fire Service<br>Minna, Niger State</p><br><div style="background:#f9f9f9;padding:15px;border-radius:10px"><b>📍 Our Address</b><br>Father O'Connell Road, Type "A" Quarters<br>P.M.B 106, Minna, Niger State.<br>📞 Emergency: <b>08062420591</b><br>✉️ Email: <b>nsfirser@gmail.com</b></div></div>
+<div class="leader"><div class="av">1</div><div><b>1. Controller</b><p>Usman F. Usman, MFPAN</p></div></div>
+<div class="leader"><div class="av">2</div><div><b>2. Deputy Controller</b><p>Yohanna Audu</p></div></div>
+<div class="leader"><div class="av">3</div><div><b>3. Admin</b><p>Mohammed Gimba Vulegbo</p></div></div>
+<div class="leader"><div class="av">4</div><div><b>4. Operation</b><p>Aliyu Mohammed Bida</p></div></div>
+<div class="leader"><div class="av">5</div><div><b>5. Sanitation</b><p>James Jerry Kuta</p></div></div>
+<div class="leader"><div class="av">6</div><div><b>6. PRO / Prevention</b><p>Hannatu Zakariya</p></div></div>
+<div class="leader"><div class="av">7</div><div><b>7. Training Commander</b><p>Emmanuel Jagaba Anthony</p></div></div>
+<div class="leader"><div class="av">8</div><div><b>8. Planning Research And Development (PR&D)</b><p>Adamu Landan</p></div></div>
+<div class="leader"><div class="av">9</div><div><b>9. Chief Imam</b><p>Danjuma M. Ndabisan</p></div></div>
+<div class="leader"><div class="av">★</div><div><b>P.A to the Controller</b><p>Musa Alfa FA (II) - P.A to Controller Usman F. Usman MFPAN</p></div></div>
 </div>
 
-<!-- ABOUT -->
-<div class="section" id="about">
-<h2>About Us - Established 1st July 1977</h2>
-<img src="vision.jpg" style="width:100%;border-radius:10px;border:1px solid #ddd" alt="Vision and Mission">
-<div class="vision-box">
-<b>OUR VISION:</b> To be the most effective, efficient, reliable and transparent Fire Service in Nigeria.<br><br>
-<b>OUR MISSION:</b> Saving of lives and properties in terms of controlling, preventing, extinguishing of fire outbreak throughout the state.<br><br>
-<b>CORE MANDATE:</b> Fire Fighting, Rescue Operation, Fire Prevention, Enforcement, Inspection, Fire Safety Training, Fire Investigation, Humanitarian Services.
-</div>
-<div class="grid">
-<div class="card"><img src="etsu.jpg" alt="Etsu Nupe"><h3>HIS ROYAL HIGHNESS ALH. (DR) YAHAYA ABUBAKAR, CFR</h3><p>Etsu Nupe and Chairman<br>Niger State Council of Traditional Rulers</p></div>
-<div class="card"><img src="controller.jpg" alt="Controller"><h3>USMAN FATI USMAN</h3><p>Current Controller<br>Leading the Service with Excellence</p></div>
-</div>
-</div>
-
-<!-- PAST CONTROLLERS -->
-<div class="section" id="past">
-<h2>Past Controllers - Our Heroes</h2>
-<p style="margin-bottom:15px">We honour the leaders who built this Service from 1977 to date.</p>
-<div class="grid">
-<div class="card"><img src="past1.jpg"><h3>ALH. A. NDAKOGI</h3><p>Past Controller</p></div>
-<div class="card"><img src="past2.jpg"><h3>ALH. ABUBAKAR TAFYAN</h3><p>Past Controller</p></div>
-<div class="card"><img src="past3.jpg"><h3>ALH. D.D. DOKWADANYI</h3><p>Past Controller</p></div>
-<div class="card"><img src="past4.jpg"><h3>ALH. MUHAMMAD BABA KUDU</h3><p>Past Controller</p></div>
-<div class="card"><img src="past5.jpg"><h3>ALH. A.S. BABABIDA</h3><p>Past Controller</p></div>
-<div class="card"><img src="past6.jpg"><h3>ALH. BELLO SALIHU</h3><p>Past Controller</p></div>
-<div class="card"><img src="past7.jpg"><h3>ALH. HASSAN TAFYAN</h3><p>Past Controller</p></div>
-<div class="card"><img src="past8.jpg"><h3>ALH. BABA ALIKALI</h3><p>Past Controller</p></div>
-</div>
+<div id="past" class="section">
+<h2>📜 Past Directors / Controllers - Niger State Fire Service</h2>
+<p>We honour our past leaders who served Niger State Fire Service with courage and sacrifice. Names only, as displayed at Headquarters, Minna.</p>
+<div class="leader"><div class="av">1</div><div><b>1. A. Ndakogi</b><p>Past Leader - Niger State Fire Service | Hassan Ndakogi Fire Academy, Minna named in his honour</p></div></div>
+<div class="leader"><div class="av">2</div><div><b>2. Mallam Abubakar Tafyan</b><p>Director Fire Service, Niger State | Abubakar Tafyan Hall named in his honour</p></div></div>
+<div class="leader"><div class="av">3</div><div><b>3. D. D. Dokwadanyi</b><p>Deputy Director - 03 - 19 August 2012, Niger State Fire Service</p></div></div>
+<div class="leader"><div class="av">4</div><div><b>4. Muhammad Baba Kudu</b><p>Director Fire Service, Niger State</p></div></div>
+<div class="leader"><div class="av">5</div><div><b>5. A.S. Bababida</b><p>Controller, Niger State Fire Service</p></div></div>
+<div class="leader"><div class="av">6</div><div><b>6. Alh. Bello Salihu MPA, MCASH, MFPAN</b><p>Controller, Niger State Fire Service - Courtesy visit with CG Federal Fire Service Alh. Liman Ibrahim to Gov't House, Alh. Sani Bello</p></div></div>
+<div class="leader"><div class="av">7</div><div><b>7. Hassan Muhammad Tafyan MFPAN, CNA</b><p>Ag. Controller, Niger State Fire Service</p></div></div>
+<div class="leader"><div class="av">8</div><div><b>8. Baba Alhaji Alikali MFPAN, MNATES</b><p>Controller, Niger State Fire Service</p></div></div>
+<div class="leader" style="background:#b40000;color:#fff"><div class="av" style="background:#ffcc00;color:#000">★</div><div><b style="color:#ffcc00">Present Controller</b><p style="color:#fff">Usman F. Usman, MFPAN - Controller, Niger State Fire Service</p></div></div>
+<p style="margin-top:10px"><em>Note: Order as displayed from HQ records. Dates to be confirmed from official establishment records where not stated on frame.</em></p>
 </div>
 
-<!-- GALLERY -->
-<div class="section" id="gallery">
-<h2>Gallery - History & Events</h2>
-<div class="grid">
-<div class="card"><img src="event1.jpg"><h3>Courtesy Visit</h3><p>Fire Service Officers on Courtesy Visit</p></div>
-<div class="card"><img src="event2.jpg"><h3>Officer Promotion Decoration</h3><p>2nd November, 2021</p></div>
-<div class="card"><img src="event3.jpg"><h3>Visit of Commissioner for Special Duty</h3><p>21st July, 2014</p></div>
-<div class="card"><img src="event4.jpg"><h3>Courtesy Visit of Controller General</h3><p>Alh. Liman Ibrahim & Alh. Bello Sadiu to Gov't House</p></div>
-<div class="card"><img src="event5.jpg"><h3>Officers & Men - Group Photo</h3><p>Niger State Fire Service</p></div>
-<div class="card"><img src="event6.jpg"><h3>Decoration of 36 Promoted Officers</h3><p>Abubakar Tafyan Hall, Hassan Ndakogi Fire Academy Minna - 5th March 2013</p></div>
-<div class="card"><img src="event7.jpg"><h3>National Council on Fire Conference</h3><p>NIGER 2015 - 12/10/2015 - 7th National Council</p></div>
-<div class="card"><img src="event8.jpg"><h3>Group Photo - Officers & Visitors</h3><p>At Station</p></div>
-<div class="card"><img src="event9.jpg"><h3>Group Photo - Officers & Men</h3><p>Niger State Fire Service</p></div>
-<div class="card"><img src="event10.jpg"><h3>Officers with VIPs</h3><p>At Station</p></div>
+<div id="departments" class="section">
+<div class="card"><h2>🏢 Our Departments - 11 Departments</h2><p>11 Departments working together to save lives & property under Controller Usman F. Usman MFPAN.</p></div>
+<div class="cards" style="margin-top:12px">
+<div class="card"><h2>1. 🛡️ Fire Prevention Unit</h2><p>Fire prevention, inspection, safety awareness. Head: Hannatu Zakariya.</p></div>
+<div class="card"><h2>2. 📞 Control Room</h2><p>Receives emergency calls, dispatches fire trucks 24/7. Emergency: 08062420591.</p></div>
+<div class="card"><h2>3. 📋 Admin</h2><p>Administration, staff matters, records. Head: Mohammed Gimba Vulegbo.</p></div>
+<div class="card"><h2>4. 🚒 Operation</h2><p>Fire fighting, rescue, emergency response. Head: Aliyu Mohammed Bida.</p></div>
+<div class="card"><h2>5. 🏥 Clinic</h2><p>Medical care, first aid and health services for staff and victims.</p></div>
+<div class="card"><h2>6. 🧹 Sanitation</h2><p>Cleanliness, hygiene, maintenance. Head: James Jerry Kuta.</p></div>
+<div class="card"><h2>7. 💰 Accounting</h2><p>Finance, salaries, budget, payments.</p></div>
+<div class="card"><h2>8. 📢 PRO Unit</h2><p>Public Relations, media, enlightenment. Head: Hannatu Zakariya.</p></div>
+<div class="card"><h2>9. 📊 Planning Research And Development (PR&D)</h2><p>Planning, research, development. Head: Adamu Landan.</p></div>
+<div class="card"><h2>10. 👀 Watch</h2><p>Watch duty, guard, security and monitoring.</p></div>
+<div class="card"><h2>11. 🎓 Training</h2><p>Training, drills, capacity building. Head: Emmanuel Jagaba Anthony.</p></div>
+<div class="card" style="background:#b40000;color:#fff"><h2 style="color:#ffcc00">🔥 We Save Lives & Property</h2><p style="color:#fff">Under Controller Usman F. Usman, MFPAN</p></div>
 </div>
 </div>
 
-<!-- STATIONS -->
-<div class="section" id="stations">
-<h2>Our Fire Stations Across Niger State</h2>
-<img src="map.jpg" class="map-img" alt="Map of Fire Stations">
-<p style="margin-top:12px;line-height:1.7"><b>Headquarters:</b> Minna<br><b>Stations:</b> Bosso Road, Trade Fair, Suleja, Bida, Kontagora, Three Arm Zone, Borgu, Mokwa, Lapai, Kuta, Kutigi, Kagara, Rijau, Agaie and more.<br>We are close to you - to save lives and properties.</p>
+<section id="history"><h2>📜 Our History 1976 - 2026</h2>
+<h3>Historical Development, Achievements and Transformation</h3>
+<p>The Niger State Fire Service is a government emergency-response agency responsible for protecting lives, property and the environment against fire outbreaks and related emergencies across Niger State.</p>
+<p>Its responsibilities include firefighting, rescue operations, fire prevention, public enlightenment, fire-safety inspections and collaboration with other emergency-management institutions.</p>
+<div class="timeline">
+<div><strong>1976 - Creation of Niger State</strong><br>Niger State was created on 3 February 1976 from the former North-Western State. Some fire-protection facilities existed before the State was created. Following creation, the need for an organised state-level fire service became increasingly important as towns, markets and communities expanded.</div>
+<div><strong>5th March 2013 - Decoration of 36 Promoted Fire Officers</strong><br>Decoration of 36 Promoted Fire Officers at Abubakar Tafyan Hall, Hassan Ndakogi Fire Academy, Minna. The Academy and Hall are named in honour of past leaders Hassan Ndakogi and Abubakar Tafyan.</div>
+<div><strong>12th October 2015 - 7th National Council on Fire Conference, Niger 2015</strong><br>Niger State hosted the 7th National Council on Fire Conference, Niger 2015, on 12/10/2015, bringing together Fire Service leaders from across Nigeria.</div>
+<div><strong>2016 - 2018 - Infrastructure Expansion</strong><br>In December 2016, the administration of Governor Abubakar Sani Bello announced plans to improve fire-service infrastructure. Reported plans included six new fire stations, 13 firefighting engines, water-storage facilities, industrial boreholes and backup water tankers in Minna, Bida, Suleja, Kontagora, Mokwa and other towns.</div>
+<div><strong>2019 - 2020 - Rehabilitation</strong><br>Rehabilitation and equipping work at stations in Minna, Bida, Mokwa and Kontagora, as well as construction at Lapai. The then Director was Alhaji Mohammed Baba Kudu.</div>
+<div><strong>2019 - Federal Fire Service Zone G</strong><br>The Federal Government announced a Federal Fire Service zonal office in Minna, designated Zone G, covering Niger, Kogi and Kwara States. The Federal and State Services are separate institutions, but collaborate during emergencies.</div>
+<div><strong>2021 - Reforms and Achievements</strong><br>Reconstruction and equipping of ten fire stations across ten Local Government Areas, recruitment of additional personnel, improvements in welfare, and alignment of salary structure with the Federal Fire Service.</div>
+<div><strong>Courtesy Visit - CG Federal Fire Service & Controller Niger State</strong><br>Courtesy Visit of the Controller General of Federal Fire Service, Alh. Liman Ibrahim, and Controller Niger State Fire Service, Alh. Bello Salihu, during the courtesy visit to the Niger State Gov't House, Alh. Sani Bello.</div>
+<div><strong>2022 - 2025 - Modernisation</strong><br>Focus on modern firefighting methods, training and retraining, vehicle maintenance, emergency communication and incident records.</div>
+<div><strong>2026 - Recent Developments</strong><br>Acquisition of six fire trucks, procurement of two quick-intervention vehicles for markets, recruitment and absorption of casual personnel with a reported workforce of 468 personnel, repairs to four trucks, drilling of a borehole at Headquarters, and improvement of the control room.</div>
 </div>
+<h3>Core Responsibilities</h3>
+<ul>
+<li>Responding to domestic, commercial and industrial fire outbreaks</li><li>Conducting rescue operations</li><li>Saving lives and protecting property</li><li>Fire-safety education and public enlightenment</li><li>Fire-prevention inspections</li><li>Supporting disaster-management operations</li>
+</ul>
+<p><em>Note: This is a historical overview. The exact formal establishment date and complete list of past Controllers/Directors should be confirmed from official establishment records before formal publication.</em></p>
+<br><a class="btn-red" href="history.pdf" target="_blank">Download Full History (PDF)</a>
+<p style="margin-top:12px"><b>Mission:</b> To prevent, control and extinguish fires, rescue victims, educate public on fire safety.</p>
+<p><b>Vision:</b> A Niger State where every home, market, school, office is safe from fire disaster.</p>
+<p><b>Core Values:</b> Bravery, Discipline, Service, Speed, Sacrifice.</p>
+<p><b>Our Promise:</b> Whenever you call us, we will come. Whenever there is fire, we will fight it. Whenever there is danger, we will rescue.</p>
+</section>
 
-<!-- CONTACT -->
-<div class="section" id="contact">
-<h2>Contact Us</h2>
-<p style="line-height:1.8;font-size:16px">
-<b>Niger State Fire Service</b><br>
-Headquarters, Minna, Niger State, Nigeria<br>
-<b>Emergency:</b> 112<br>
-<b>Established:</b> 1st July 1977<br>
-<b>Controller:</b> Usman Fati Usman BLD, MFPAN<br><br>
-For Fire Safety Training, Inspection, and Prevention - Visit our Headquarters.
-</p>
+<div id="staff" class="section">
+<div class="card" style="text-align:left"><h2>👥 Staff Logging - MDAS Staff List</h2><p>All staff must fill this form. Data goes to Google Sheet - safe forever.</p>
+<div id="staffStatus" class="status">✅ Saved to Google Sheet Successfully!</div>
+<form id="staffForm">
+<label>Full Name (Surname First) *</label><input id="sName" placeholder="e.g. MUSA ALFA" required>
+<div class="row"><div><label>Rank *</label><select id="sRank" required><option value="">Select Rank</option><option>Controller</option><option>Deputy Controller</option><option>Assistant Controller</option><option>Chief Fire Superintendent</option><option>Superintendent</option><option>Assistant Superintendent I</option><option>Assistant Superintendent II</option><option>Inspector</option><option>Assistant Inspector</option><option>Fire Assistant I</option><option>Fire Assistant II</option><option>Fire Assistant III</option><option>Fireman</option></select></div><div><label>File / Service Number *</label><input id="sFile" placeholder="NSFS/001" required></div></div>
+<div class="row"><div><label>Date of Birth *</label><input type="date" id="sDob" required></div><div><label>Phone *</label><input id="sPhone" placeholder="0803..." required></div></div>
+<div class="row"><div><label>Date of First Appointment *</label><input type="date" id="sFirst" required></div><div><label>Department *</label><select id="sDept" required><option value="">Select Department</option><option>Fire Prevention Unit</option><option>Control Room</option><option>Admin</option><option>Operation</option><option>Clinic</option><option>Sanitation</option><option>Accounting</option><option>PRO Unit</option><option>Planning Research And Development (PR&D)</option><option>Watch</option><option>Training</option><option>ICT / Digital Transformation</option></select></div></div>
+<div class="row"><div><label>Station *</label><select id="sStation" required><option value="">Select Station</option><option>Headquarters - Minna</option><option>Bosso Road</option><option>Bida</option><option>Kontagora</option><option>Suleja</option><option>Lapai</option><option>New Bussa</option><option>Kagara</option><option>Mokwa</option><option>Wushishi</option><option>Agaie</option><option>Katcha</option><option>Kutigi</option><option>Kuta</option><option>Rijau</option><option>Others</option></select></div><div><label>LGA *</label><select id="sLga" required><option value="">Select LGA</option><option>Chanchaga</option><option>Bosso</option><option>Shiroro</option><option>Rafi</option><option>Munya</option><option>Paikoro</option><option>Suleja</option><option>Tafa</option><option>Gurara</option><option>Bida</option><option>Gbako</option><option>Katcha</option><option>Lapai</option><option>Agaie</option><option>Kontagora</option><option>Mariga</option><option>Mashegu</option><option>Wushishi</option><option>Borgu</option><option>Agwara</option><option>Mokwa</option><option>Lavun</option><option>Edati</option><option>Magama</option><option>Rijau</option></select></div></div>
+<button class="submit" type="submit">SUBMIT STAFF RECORD ➤</button>
+</form>
+<p style="margin-top:15px">Total Staff (This Device): <b id="totalStaff">0</b> | <button onclick="exportStaff()" style="padding:8px 14px;width:auto">Download Excel / CSV</button> <button onclick="window.print()" style="padding:8px 14px;width:auto">Print</button></p>
+<table><thead><tr><th>S/N</th><th>Name</th><th>Rank</th><th>File No</th><th>Station</th><th>LGA</th><th>Phone</th></tr></thead><tbody id="staffList"></tbody></table>
+</div></div>
+
+<div id="report" class="section">
+<div class="card" style="text-align:left"><h2>Fire Incident Report</h2><p>Report Number: <b id="nextNo" style="color:#b40000">NSFS/2026/001</b> | Also CALL 08062420591 immediately.</p>
+<div id="fireStatus" class="status">✅ Fire Report Saved to Google Sheet Successfully!</div>
+<form id="fireForm">
+<div class="row"><div><label>Date of Incident *</label><input type="date" id="fDate" required></div><div><label>Time *</label><input type="time" id="fTime" required></div></div>
+<div class="row"><div><label>Location *</label><input id="fLoc" placeholder="e.g. Kpakungu, Minna" required></div><div><label>Station That Responded *</label><select id="fStation" required><option value="">Select Station</option><option>Headquarters - Minna</option><option>Bida</option><option>Kontagora</option><option>Suleja</option><option>Lapai</option><option>New Bussa</option><option>Kagara</option><option>Mokwa</option><option>Wushishi</option><option>Agaie</option><option>Katcha</option><option>Others</option></select></div></div>
+<div class="row"><div><label>Type *</label><select id="fType" required><option>Residential Building Fire</option><option>Market / Shop Fire</option><option>Vehicle Fire</option><option>Fuel Station Fire</option><option>Farm / Bush Fire</option><option>Electrical Fire</option><option>Gas Explosion</option><option>Rescue Operation</option><option>False Alarm</option><option>Others</option></select></div><div><label>Suspected Cause</label><select id="fCause"><option>Electrical Fault</option><option>Gas Leakage</option><option>Candle / Lantern</option><option>Cooking Gas / Stove</option><option>Arson</option><option>Unknown</option><option>Others</option></select></div></div>
+<div class="row"><div><label>Property Saved (₦)</label><input type="number" id="fSaved" placeholder="5000000"></div><div><label>Property Lost (₦)</label><input type="number" id="fLost" placeholder="200000"></div></div>
+<div class="row"><div><label>Injured</label><input type="number" id="fInj" value="0"></div><div><label>Deaths</label><input type="number" id="fDeath" value="0"></div></div>
+<label>Officer in Charge *</label><input id="fOfficer" placeholder="e.g. Musa Alfa FA (II)" required>
+<label>Action Taken / Remarks *</label><textarea id="fAction" placeholder="e.g. Fire extinguished..." required></textarea>
+<button class="submit" type="submit">SUBMIT FIRE INCIDENT REPORT ➤</button>
+</form>
+<p style="margin-top:15px">Total Reports (This Device): <b id="totalRep">0</b> | Saved: <b id="tSaved">₦0</b> | Lost: <b id="tLost">₦0</b> | <button onclick="exportFire()" style="padding:8px 14px;width:auto">Download Excel / CSV</button></p>
+<table><thead><tr><th>Report No</th><th>Date</th><th>Location</th><th>Type</th><th>Saved</th><th>Lost</th><th>Officer</th></tr></thead><tbody id="fireList"></tbody></table>
+</div></div>
+
+<div id="stations" class="section"><div class="card" style="text-align:left"><h2>📍 Niger State Fire Service Stations</h2>
+<div class="station-box"><h3>🏛️ Minna Headquarters</h3><ul><li><b>1. Minna Headquarters</b> - Father O'Connell Road, Minna</li><li><b>2. Bosso Road</b></li></ul></div>
+<div class="station-box"><h3>🌍 Substations Outside Minna</h3><ol style="padding-left:20px"><li>Agaie</li><li>Mokwa</li><li>Kutigi</li><li>Lapai</li><li>Bida</li><li>Kuta</li><li>Kagara</li><li>Suleja</li><li>New Busa</li><li>Kontagora</li><li>Rijau</li></ol></div>
+<div class="station-box"><h3>🏙️ Substations in Minna Town</h3><ol style="padding-left:20px"><li>3 Arm Zone</li><li>Kure Market</li><li>Building Material</li><li>Government House</li><li>SSG Office</li><li>Trade Fair</li><li>Kasuwan Gwari</li><li>State House Of Assembly</li><li>New Secretariat</li></ol></div>
+<p><b>Emergency for all stations:</b> <a href="tel:08062420591">08062420591</a></p>
+<a href="https://www.google.com/maps/search/Niger+State+Fire+Service+Minna" target="_blank"><button class="submit">OPEN GOOGLE MAP →</button></a></div></div>
+
+<div id="safety" class="section"><div class="tips"><h2>🔥 Fire Safety Tips - Protect Your Family</h2><ol style="margin:12px 0 0 18px;line-height:1.9"><li>Switch off electrical appliances when leaving home.</li><li>Do not leave candle, lantern or stove unattended.</li><li>Keep matches away from children.</li><li>Do not store fuel inside house or shop.</li><li>Teach children not to play with fire.</li><li>Know your nearest Fire Station.</li><li>When you see fire, call 08062420591 immediately.</li><li>Do not block Fire Service vehicles. Give us way.</li></ol></div></div>
+
+<div id="contact" class="section"><div class="card" style="text-align:center;line-height:2"><b>Niger State Fire Service Headquarters</b><br>Father O'Connell Road, Type "A" Quarters<br>P.M.B 106, Minna, Niger State.<br>📞 Emergency: <b>08062420591</b><br>✉️ Email: <b>nsfirser@gmail.com</b><br><br><b>Controller: Usman F. Usman MFPAN</b><br>P.A: Musa Alfa FA (II)<br><br><a href="tel:08062420591"><button class="submit" style="width:auto;padding:12px 25px">CALL NOW</button></a></div></div>
+
+<section id="admin"><h2 style="text-align:center">🔥 ADMIN LOGIN</h2><p style="text-align:center">Niger State Fire Service - Minna</p>
+<div id="loginBox">
+<input id="pass" type="password" placeholder="Enter Admin Password">
+<button onclick="login()">LOGIN</button>
+<p style="text-align:center;font-size:13px">First password is: <b>Fire2026</b></p>
 </div>
+<div id="adminBox" class="hide">
+<h3>Fire Reports</h3>
+<p>Reports sent from THIS phone will show here. Reports from other phones go to your Email & Google Sheet.</p>
+<div id="list"></div>
+<button onclick="clearAll()" style="background:#222">CLEAR ALL REPORTS</button>
+<p style="text-align:center;margin-top:10px"><a href="#home">← Back to Website</a></p>
+</div>
+</section>
 
-<footer>
-<b>NIGER STATE FIRE SERVICE</b><br>
-Saving Lives & Properties Since 1977<br>
-© 2026 Niger State Fire Service. All Rights Reserved.
-</footer>
+<footer><b>NIGER STATE FIRE SERVICE</b><br>We Save Lives & Property<br>Father O'Connell Road, Type "A" Quarters, P.M.B 106, Minna, Niger State.<br>Controller: Usman F. Usman, MFPAN | Emergency: 08062420591 | Email: nsfirser@gmail.com<br>© 2026 Niger State Fire Service</footer>
 
+<script>
+const GOOGLE_SHEET_URL = "PASTE_YOUR_URL_HERE";
+function fmt(n){return '₦'+Number(n||0).toLocaleString();}
+function sendToSheet(data){if(!GOOGLE_SHEET_URL || GOOGLE_SHEET_URL.indexOf("PASTE")!==-1){return;}fetch(GOOGLE_SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(()=>{});}
+let staff=JSON.parse(localStorage.getItem('nsfs_staff')||'[]');let reports=JSON.parse(localStorage.getItem('nsfs_reports')||'[]');
+function renderStaff(){document.getElementById('totalStaff').innerText=staff.length;document.getElementById('staffList').innerHTML=staff.map((s,i)=>`<tr><td>${i+1}</td><td>${s.name}</td><td>${s.rank}</td><td>${s.fileNo}</td><td>${s.station}</td><td>${s.lga}</td><td>${s.phone}</td></tr>`).join('');}
+function renderFire(){document.getElementById('nextNo').innerText='NSFS/2026/'+String(reports.length+1).padStart(3,'0');document.getElementById('totalRep').innerText=reports.length;document.getElementById('tSaved').innerText=fmt(reports.reduce((a,r)=>a+Number(r.saved||0),0));document.getElementById('tLost').innerText=fmt(reports.reduce((a,r)=>a+Number(r.lost||0),0));document.getElementById('fireList').innerHTML=reports.map(r=>`<tr><td><b>${r.no}</b></td><td>${r.date}</td><td>${r.loc}</td><td>${r.type}</td><td>${fmt(r.saved)}</td><td>${fmt(r.lost)}</td><td>${r.officer}</td></tr>`).join('');}
+document.getElementById('staffForm').addEventListener('submit',e=>{e.preventDefault();let rec={type:"staff",name:document.getElementById('sName').value.toUpperCase(),rank:document.getElementById('sRank').value,fileNo:document.getElementById('sFile').value,dob:document.getElementById('sDob').value,phone:document.getElementById('sPhone').value,firstApp:document.getElementById('sFirst').value,dept:document.getElementById('sDept').value,station:document.getElementById('sStation').value,lga:document.getElementById('sLga').value};staff.push(rec);localStorage.setItem('nsfs_staff',JSON.stringify(staff));sendToSheet(rec);renderStaff();document.getElementById('staffStatus').style.display='block';alert('Staff Record Submitted! Saved to Google Sheet + This Device.');e.target.reset();});
+document.getElementById('fireForm').addEventListener('submit',e=>{e.preventDefault();let no='NSFS/2026/'+String(reports.length+1).padStart(3,'0');let rec={type:"fire",reportNo:no,date:document.getElementById('fDate').value,time:document.getElementById('fTime').value,location:document.getElementById('fLoc').value,station:document.getElementById('fStation').value,type2:document.getElementById('fType').value,cause:document.getElementById('fCause').value,saved:document.getElementById('fSaved').value||0,lost:document.getElementById('fLost').value||0,injured:document.getElementById('fInj').value,deaths:document.getElementById('fDeath').value,officer:document.getElementById('fOfficer').value,action:document.getElementById('fAction').value};reports.push({no:no,date:rec.date,loc:rec.location,type:rec.type2,saved:rec.saved,lost:rec.lost,officer:rec.officer});localStorage.setItem('nsfs_reports',JSON.stringify(reports));sendToSheet(rec);renderFire();document.getElementById('fireStatus').style.display='block';alert('Report Submitted! Your Number is '+no+' - Saved to Google Sheet.');e.target.reset();});
+function exportStaff(){let csv="Name,Rank,File No,Station,LGA,Phone\n"+staff.map(s=>`"${s.name}","${s.rank}","${s.fileNo}","${s.station}","${s.lga}","${s.phone}"`).join("\n");let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='NSFS_Staff_List.csv';a.click();}
+function exportFire(){let csv="Report No,Date,Location,Type,Saved,Lost,Officer\n"+reports.map(r=>`"${r.no}","${r.date}","${r.loc}","${r.type}","${r.saved}","${r.lost}","${r.officer}"`).join("\n");let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='NSFS_Fire_Reports.csv';a.click();}
+function login(){ if(document.getElementById('pass').value==='Fire2026'){ document.getElementById('loginBox').classList.add('hide'); document.getElementById('adminBox').classList.remove('hide'); showAdmin(); } else { alert('Wrong Password Sir'); } }
+function showAdmin(){ let r=JSON.parse(localStorage.getItem('nsfs_reports')||'[]'); let h=''; if(r.length==0) h='<p>No report on this phone yet.</p>'; r.forEach(x=>{ h+='<div class="report"><b>'+x.no+'</b> - '+x.loc+'<br>Type: '+x.type+'<br>Saved: '+fmt(x.saved)+' Lost: '+fmt(x.lost)+'<br>Officer: '+x.officer+'</div>' }); document.getElementById('list').innerHTML=h; }
+function clearAll(){ if(confirm('Clear all?')){ localStorage.removeItem('nsfs_reports'); renderFire(); showAdmin(); } }
+renderStaff();renderFire();
+</script>
 </body>
-</html>
+</html>accesskey
